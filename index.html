@@ -143,12 +143,12 @@
                 <h2 class="text-4xl md:text-5xl font-black mt-2 tracking-tighter uppercase">Mission <span class="gradient-text">Enrollment.</span></h2>
             </div>
 
-            <form action="https://docs.google.com/forms/d/e/1FAIpQLScUVmvDZuX-CGLpNIw56GSZ2uofzT9gf878MrdOmBsq9Rttxw/formResponse" 
-                  method="POST" target="_hidden_iframe" onsubmit="handleFormSubmit()" class="space-y-12">
+            <form id="registration-form" action="https://docs.google.com/forms/d/e/1FAIpQLScUVmvDZuX-CGLpNIw56GSZ2uofzT9gf878MrdOmBsq9Rttxw/formResponse" 
+                method="POST" target="_hidden_iframe" onsubmit="openPayment(event)" class="space-y-12">
                 
                 <div class="grid md:grid-cols-2 gap-x-12 gap-y-12">
                     <div class="relative">
-                        <input type="text" name="entry.967343855" required placeholder=" " 
+                           <input type="text" id="full-name" name="entry.967343855" required placeholder=" " 
                                class="peer w-full bg-transparent border-b-2 border-slate-800 py-3 outline-none focus:border-lime-400 transition-all text-xl text-white">
                         <label class="absolute left-0 top-3 text-slate-500 pointer-events-none transition-all peer-focus:text-lime-400 peer-placeholder-shown:text-slate-500 uppercase tracking-widest text-xs">Full Name</label>
                     </div>
@@ -160,13 +160,13 @@
                     </div>
 
                     <div class="relative">
-                        <input type="text" name="entry.1490002744" required placeholder=" " 
+                           <input type="text" id="cell-number" name="entry.1490002744" required placeholder=" " 
                                class="peer w-full bg-transparent border-b-2 border-slate-800 py-3 outline-none focus:border-lime-400 transition-all text-xl text-white">
                         <label class="absolute left-0 top-3 text-slate-500 pointer-events-none transition-all peer-focus:text-lime-400 peer-placeholder-shown:text-slate-500 uppercase tracking-widest text-xs">Cell Number</label>
                     </div>
 
                     <div class="relative">
-                        <input type="text" name="entry.614471842" required placeholder=" " 
+                           <input type="text" id="physical-address" name="entry.614471842" required placeholder=" " 
                                class="peer w-full bg-transparent border-b-2 border-slate-800 py-3 outline-none focus:border-lime-400 transition-all text-xl text-white">
                         <label class="absolute left-0 top-3 text-slate-500 pointer-events-none transition-all peer-focus:text-lime-400 peer-placeholder-shown:text-slate-500 uppercase tracking-widest text-xs">Physical Address</label>
                     </div>
@@ -200,12 +200,76 @@
                 </div>
 
                 <button type="submit" id="submit-btn" class="w-full group bg-lime-400 text-slate-950 font-black py-6 rounded-2xl uppercase tracking-[0.3em] hover:bg-white transition-all shadow-xl shadow-lime-400/20 flex justify-center items-center gap-3">
-                    <span>Transmit Registration</span>
+                    <span>Proceed To Payment</span>
                     <i class="fa-solid fa-arrow-right group-hover:translate-x-2 transition-transform"></i>
                 </button>
+
+                <p class="text-center text-[11px] font-bold text-lime-400 uppercase tracking-widest">
+                    <i class="fa-solid fa-circle-check mr-1"></i>
+                    Official Merchant Payment Enabled: Code 510565
+                </p>
             </form>
 
             <iframe name="_hidden_iframe" style="display:none;"></iframe>
+
+            <div id="payment-modal" class="hidden fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/90 backdrop-blur-md">
+                <div class="bg-[#1a1a1a] border border-lime-500/30 w-full max-w-md rounded-3xl p-8 text-white relative">
+                    <div class="text-center mb-8">
+                        <div class="w-16 h-16 bg-lime-500/10 rounded-full flex items-center justify-center mx-auto mb-4 border border-lime-500/20">
+                            <i class="fa-solid fa-mobile-screen-button text-lime-500 text-2xl"></i>
+                        </div>
+                        <h2 class="text-2xl font-black uppercase tracking-tighter">Secure Registration</h2>
+                        <p class="text-slate-400 text-xs mt-1 uppercase tracking-widest">Sacred Heart Mania 2026</p>
+                    </div>
+
+                    <div class="bg-lime-950/30 border border-lime-500/20 rounded-2xl p-6 mb-6">
+                        <div class="flex justify-between items-start mb-6 gap-3">
+                            <div>
+                                <p class="text-[10px] font-black text-lime-500 uppercase tracking-widest">Official Merchant</p>
+                                <h3 class="text-lg font-bold text-white">Sacred Heart Parish Kitwe</h3>
+                            </div>
+                            <div class="bg-lime-500 text-black px-3 py-1 rounded font-black text-xs italic">
+                                CODE: 510565
+                            </div>
+                        </div>
+
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-3 text-xs">
+                                <span class="w-5 h-5 flex items-center justify-center bg-lime-500 text-black rounded-full font-black text-[10px]">1</span>
+                                <p class="text-slate-300">Dial <span class="text-white font-mono">*115#</span> on your phone</p>
+                            </div>
+                            <div class="flex items-center gap-3 text-xs">
+                                <span class="w-5 h-5 flex items-center justify-center bg-lime-500 text-black rounded-full font-black text-[10px]">2</span>
+                                <p class="text-slate-300">Select <span class="text-white font-bold">Option 5</span> and then <span class="text-white font-bold">Option 1</span></p>
+                            </div>
+                            <div class="flex items-center gap-3 text-xs">
+                                <span class="w-5 h-5 flex items-center justify-center bg-lime-500 text-black rounded-full font-black text-[10px]">3</span>
+                                <p class="text-slate-300">Enter Merchant Code: <span class="text-lime-500 font-mono font-bold tracking-widest">510565</span></p>
+                            </div>
+                            <div class="flex items-center gap-3 text-xs">
+                                <span class="w-5 h-5 flex items-center justify-center bg-lime-500 text-black rounded-full font-black text-[10px]">4</span>
+                                <p class="text-slate-300">Enter Amount: <span class="text-white font-bold">K150.00</span></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <form id="final-registration" onsubmit="handleFinalSubmit(event)" class="space-y-4">
+                        <div>
+                            <label for="transaction-id" class="block text-[10px] font-bold text-slate-500 uppercase mb-2">Transaction ID / Reference</label>
+                            <input id="transaction-id" type="text" placeholder="Enter MoMo Ref Number" required 
+                                   class="w-full bg-transparent border-b border-white/10 py-2 outline-none focus:border-lime-500 transition-all text-lg font-mono">
+                        </div>
+
+                        <button type="submit" class="w-full bg-lime-500 text-black py-5 rounded-2xl font-black uppercase tracking-widest hover:bg-white transition-all shadow-[0_0_20px_rgba(132,204,22,0.3)]">
+                            Confirm And Register
+                        </button>
+                    </form>
+
+                    <button onclick="closePayment()" class="absolute top-6 right-6 text-slate-500 hover:text-white transition-colors" aria-label="Close payment modal">
+                        <i class="fa-solid fa-xmark text-xl"></i>
+                    </button>
+                </div>
+            </div>
             
             <div id="success-overlay" class="hidden absolute inset-0 bg-slate-900 rounded-[2.5rem] flex flex-col items-center justify-center text-center p-12 z-50 animate-in fade-in duration-300">
                 <i class="fa-solid fa-circle-check text-lime-400 text-6xl mb-6"></i>
@@ -260,11 +324,68 @@
     </footer>
 
     <script>
+        let originalAddressValue = '';
+        const transactionFieldName = '';
+
+        function openPayment(event) {
+            event.preventDefault();
+
+            const form = document.getElementById('registration-form');
+            if (!form.reportValidity()) {
+                return;
+            }
+
+            document.getElementById('payment-modal').classList.remove('hidden');
+            document.body.classList.add('overflow-hidden');
+            document.getElementById('transaction-id').focus();
+        }
+
+        function closePayment() {
+            document.getElementById('payment-modal').classList.add('hidden');
+            document.body.classList.remove('overflow-hidden');
+        }
+
+        function handleFinalSubmit(event) {
+            event.preventDefault();
+
+            const transID = document.getElementById('transaction-id').value.trim();
+            if (!transID) {
+                return;
+            }
+
+            const form = document.getElementById('registration-form');
+            const addressInput = document.getElementById('physical-address');
+
+            if (!originalAddressValue) {
+                originalAddressValue = addressInput.value;
+            }
+
+            // Keeps Transaction ID in submission even before a dedicated Google Form field is mapped.
+            addressInput.value = `${originalAddressValue} | TXN: ${transID}`;
+
+            if (transactionFieldName) {
+                let hiddenTxnInput = form.querySelector('input[data-transaction-field="true"]');
+                if (!hiddenTxnInput) {
+                    hiddenTxnInput = document.createElement('input');
+                    hiddenTxnInput.type = 'hidden';
+                    hiddenTxnInput.dataset.transactionField = 'true';
+                    form.appendChild(hiddenTxnInput);
+                }
+                hiddenTxnInput.name = transactionFieldName;
+                hiddenTxnInput.value = transID;
+            }
+
+            alert('Payment Received! Your spot for Sacred Heart Mania is being verified.');
+            closePayment();
+            handleFormSubmit();
+            form.submit();
+        }
+
         function handleFormSubmit() {
             const btn = document.getElementById('submit-btn');
             btn.innerHTML = '<i class="fa-solid fa-circle-notch animate-spin"></i> Transmitting...';
             btn.disabled = true;
-            
+
             setTimeout(() => {
                 document.getElementById('success-overlay').classList.remove('hidden');
                 window.scrollTo({ top: document.getElementById('register').offsetTop, behavior: 'smooth' });
