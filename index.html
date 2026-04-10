@@ -19,6 +19,33 @@
             font-size: 11px;
             color: #84cc16;
         }
+        .payment-steps {
+            list-style: none;
+            margin: 0 0 20px 0;
+            padding: 0;
+            display: grid;
+            gap: 10px;
+        }
+        .payment-steps li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #cbd5e1;
+            font-size: 0.85rem;
+        }
+        .step-num {
+            width: 22px;
+            height: 22px;
+            border-radius: 9999px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: #84cc16;
+            color: #020617;
+            font-weight: 700;
+            font-size: 0.7rem;
+            flex: 0 0 22px;
+        }
     </style>
 </head>
 <body class="bg-slate-950 text-slate-100 font-sans">
@@ -246,24 +273,20 @@
                             </div>
                         </div>
 
-                        <div class="space-y-3">
-                            <div class="flex items-center gap-3 text-xs">
-                                <span class="w-5 h-5 flex items-center justify-center bg-lime-500 text-black rounded-full font-black text-[10px]">1</span>
-                                <p class="text-slate-300">Dial <span class="text-white font-mono">*115#</span> on your phone</p>
-                            </div>
-                            <div class="flex items-center gap-3 text-xs">
-                                <span class="w-5 h-5 flex items-center justify-center bg-lime-500 text-black rounded-full font-black text-[10px]">2</span>
-                                <p class="text-slate-300">Select <span class="text-white font-bold">Option 5</span> and then <span class="text-white font-bold">Option 1</span></p>
-                            </div>
-                            <div class="flex items-center gap-3 text-xs">
-                                <span class="w-5 h-5 flex items-center justify-center bg-lime-500 text-black rounded-full font-black text-[10px]">3</span>
-                                <p class="text-slate-300">Enter Merchant Code: <span class="text-lime-500 font-mono font-bold tracking-widest">510565</span></p>
-                            </div>
-                            <div class="flex items-center gap-3 text-xs">
-                                <span class="w-5 h-5 flex items-center justify-center bg-lime-500 text-black rounded-full font-black text-[10px]">4</span>
-                                <p class="text-slate-300">Enter Amount: <span class="text-white font-bold">K150.00</span></p>
-                            </div>
+                        <div class="bg-slate-50 p-4 rounded-lg mb-5 border border-slate-200">
+                            <p class="m-0 mb-2 text-sm text-slate-500">Direct Auto-Dial Code:</p>
+                            <h3 id="dynamic-ussd-display" class="m-0 text-red-500 tracking-wider text-xl font-black">*115*8*510565*200#</h3>
                         </div>
+
+                        <ul class="payment-steps">
+                            <li><span class="step-num">1</span> Tap the code below to auto-dial (or type it manually).</li>
+                            <li><span class="step-num">2</span> Enter your Airtel Money PIN to confirm payment.</li>
+                            <li><span class="step-num">3</span> Paste the Transaction ID from your SMS below.</li>
+                        </ul>
+
+                        <a id="auto-dial-btn" href="tel:*115*8*510565*200%23" class="w-full bg-lime-500 text-black py-4 rounded-xl font-black uppercase tracking-wider hover:bg-white transition-all shadow-[0_0_20px_rgba(132,204,22,0.3)] block text-center">
+                            Tap to Auto-Dial
+                        </a>
                     </div>
 
                     <form id="final-registration" onsubmit="handleFinalSubmit(event)" class="space-y-4">
@@ -349,6 +372,40 @@
     <script>
         let originalAddressValue = '';
         const transactionFieldName = '';
+        const baseUssd = '*115*8*510565*';
+
+        function getSelectedDivisionAmount() {
+            const selectedDivision = document.querySelector('input[name="entry.1041085988"]:checked');
+            if (!selectedDivision) {
+                return '200';
+            }
+
+            const divisionValue = selectedDivision.value.toLowerCase();
+            if (divisionValue.includes('team') && divisionValue.includes('6')) {
+                return '1000';
+            }
+            if (divisionValue.includes('corporate')) {
+                return '10000';
+            }
+            return '200';
+        }
+
+        function updateDynamicUssd() {
+            const amount = getSelectedDivisionAmount();
+            const ussdDisplay = document.getElementById('dynamic-ussd-display');
+            const autoDialBtn = document.getElementById('auto-dial-btn');
+
+            if (ussdDisplay) {
+                ussdDisplay.innerText = `${baseUssd}${amount}#`;
+            }
+            if (autoDialBtn) {
+                autoDialBtn.href = `tel:${baseUssd}${amount}%23`;
+            }
+        }
+
+        document.querySelectorAll('input[name="entry.1041085988"]').forEach((radio) => {
+            radio.addEventListener('change', updateDynamicUssd);
+        });
 
         function openPayment(event) {
             event.preventDefault();
@@ -358,6 +415,7 @@
                 return;
             }
 
+            updateDynamicUssd();
             document.getElementById('payment-modal').classList.remove('hidden');
             document.body.classList.add('overflow-hidden');
             document.getElementById('transaction-id').focus();
@@ -414,6 +472,8 @@
                 window.scrollTo({ top: document.getElementById('register').offsetTop, behavior: 'smooth' });
             }, 1800);
         }
+
+        updateDynamicUssd();
     </script>
 
     <a href="https://wa.me/260966908648?text=Hi%21%20I%27m%20on%20the%20Sacred%20Heart%20Mania%20website%20and%20have%20a%20question."
