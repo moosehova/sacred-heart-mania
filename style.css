@@ -1,0 +1,157 @@
+/* Sacred Heart Health Walk - Tactical-01 Enrollment Card Styles */
+.enrollment-card {
+    background-color: #0b101a;
+    border-radius: 16px;
+    padding: 40px;
+    max-width: 700px;
+    margin: 0 auto;
+    font-family: 'Montserrat', sans-serif;
+}
+.deployment-clearance {
+    color: #8bc34a;
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.form-header h2 {
+    color: white;
+    font-size: 2.5rem;
+    margin: 5px 0 30px 0;
+    text-transform: uppercase;
+}
+.text-green {
+    color: #a4e320;
+}
+.input-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+.input-group {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+.input-group label, .section-label {
+    color: #5a6b82;
+    font-size: 0.7rem;
+    letter-spacing: 1.5px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+.input-group input {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #1f2b3e;
+    color: white;
+    font-size: 1rem;
+    padding: 8px 0;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+.input-group input:focus {
+    border-bottom: 1px solid #a4e320;
+}
+.division-section {
+    margin-bottom: 40px;
+    text-align: left;
+}
+.division-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 15px;
+}
+.div-card {
+    background-color: #06090f;
+    border: 1px solid #1f2b3e;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.div-card input[type="radio"] {
+    display: none;
+}
+.div-title {
+    display: block;
+    color: white;
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+.div-price {
+    display: block;
+    color: #a4e320;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+.div-card.active {
+    border-color: #a4e320;
+    background-color: rgba(164, 227, 32, 0.05);
+}
+.btn-proceed {
+    width: 100%;
+    background: linear-gradient(90deg, #bcf047, #98d115);
+    color: #06090f;
+    border: none;
+    padding: 18px;
+    font-size: 1.1rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(164, 227, 32, 0.25);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.btn-proceed:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 40px rgba(164, 227, 32, 0.4);
+}
+.merchant-footer {
+    text-align: center;
+    color: #a4e320;
+    font-size: 0.7rem;
+    font-weight: 700;
+    margin-top: 20px;
+    letter-spacing: 1px;
+}
+
+/* --- TACTICAL MOBILE RESPONSIVENESS OVERRIDE --- */
+@media screen and (max-width: 768px) {
+    .enrollment-card {
+        padding: 30px 20px;
+        /* Forces the card to be slightly smaller than the screen, creating a margin */
+        width: calc(100% - 20px); 
+        box-sizing: border-box;
+        margin: 0 auto;
+    }
+    
+    .form-header h2 {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+    }
+    
+    .input-grid {
+        grid-template-columns: 1fr;
+        gap: 15px; /* Tighter gap between inputs */
+        margin-bottom: 25px;
+    }
+    
+    .division-cards {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    
+    .div-card {
+        padding: 12px; /* Slimmer division cards */
+    }
+    
+    .btn-proceed {
+        padding: 15px;
+        font-size: 0.95rem;
+    }
+}
