@@ -21,10 +21,9 @@
             color: white;
             margin: 0;
             padding: 0;
-            background-image: url('images/background.jpg'); /* Ensure this path is correct */
+            background-image: url('images/background.jpg'); /* Ensure this matches your image name */
             background-size: cover;
             background-position: center;
-            /* --- THE BACKGROUND FIXES --- */
             background-repeat: no-repeat; 
             background-attachment: fixed; 
             background-blend-mode: overlay;
@@ -33,65 +32,51 @@
     </style>
 </head>
 <body>
-<header class="p-6 border-b border-slate-800 flex justify-between items-center">
-    <div class="text-xs uppercase tracking-[0.4em] font-black text-slate-500">
+
+<header class="p-4 md:p-6 border-b border-slate-800 flex justify-between items-center bg-[#05080d]/90 backdrop-blur-md sticky top-0 z-40">
+    <div class="flex items-center gap-3">
+        <div class="w-2 h-2 rounded-full bg-lime-400 animate-pulse shadow-[0_0_8px_rgba(164,227,32,0.8)]"></div>
+        <span class="text-[9px] md:text-[10px] uppercase tracking-[0.3em] font-black text-slate-400">System Online</span>
     </div>
-    <div class="hidden md:block text-[10px] text-lime-400 font-mono tracking-widest uppercase">
-        Project: Aerobics Mania // Tactical-01
+    <div class="text-[9px] md:text-[10px] text-lime-400 font-mono tracking-widest uppercase text-right">
+        Aerobics Mania <br class="md:hidden"><span class="hidden md:inline">// </span>Tactical-01
     </div>
 </header>
 
-<section class="relative min-h-screen flex flex-col justify-center items-center text-center px-6 overflow-hidden">
-    <div class="relative z-10 max-w-5xl mx-auto space-y-8 mt-10">
-        <img src="images/sacred_heart.png" alt="Sacred Heart Perish Kitwe" class="h-24 mx-auto mb-6 drop-shadow-lg">
-        <span class="text-amber-400 font-bold uppercase tracking-[0.3em] text-sm">May 30th | St John Convent Grounds</span>
+<section class="relative flex flex-col justify-center items-center text-center px-6 py-16 md:py-24 overflow-hidden">
+    <div class="relative z-10 max-w-5xl mx-auto space-y-8">
+        <img src="images/sacred_heart.png" alt="Sacred Heart Parish" class="h-20 md:h-24 mx-auto mb-6 drop-shadow-lg">
+        <span class="text-amber-400 font-bold uppercase tracking-[0.3em] text-[10px] md:text-sm">May 30th | St John Convent Grounds</span>
         <h1 class="text-5xl md:text-8xl font-black tracking-tighter leading-tight uppercase">
             <span class="text-amber-400">10KM HEALTH WALK</span> <br>
             <span class="text-lime-400 italic">AEROBICS MANIA</span>
         </h1>
-        <p class="text-slate-300 text-lg md:text-2xl max-w-2xl mx-auto font-medium">
+        <p class="text-slate-300 text-sm md:text-xl max-w-2xl mx-auto font-medium px-4">
             Join the Sacred Heart Parish Kitwe for a high-energy morning of fitness, community, and expert aerobics led by Makungo Muyembe.
         </p>
-        <div class="pt-10 flex justify-center">
-            <a href="#register" class="bg-lime-400 hover:bg-white text-slate-950 px-10 py-5 rounded-full font-black uppercase tracking-wider shadow-[0_0_40px_rgba(164,227,32,0.3)] transition-all transform hover:scale-105">
-                Clearance Portal
-            </a>
-        </div>
-        <div class="flex flex-col items-center gap-6 mt-12 py-10 border-t border-white/5">
-            <span class="text-[10px] font-black text-slate-500 uppercase tracking-[0.4em]">Registration Support</span>
-            <a href="https://wa.me/260966908648?text=Hi%20Sacred%20Heart%20Mania%2C%20I%20need%20help%20with%20registration."
-               target="_blank" rel="noopener noreferrer"
-               class="group flex items-center gap-5 bg-[#25D366]/5 border border-[#25D366]/20 px-10 py-5 rounded-[2rem] transition-all hover:bg-[#25D366] hover:shadow-[0_0_30px_rgba(37,211,102,0.2)]">
-                <i class="fa-brands fa-whatsapp text-3xl text-[#25D366] group-hover:text-black transition-colors"></i>
-                <div class="text-left">
-                    <p class="text-[9px] uppercase font-black text-slate-500 group-hover:text-black/60">Chat with us</p>
-                    <p class="text-xl font-black tracking-tight text-white group-hover:text-black">0966908648</p>
-                </div>
-            </a>
-        </div>
     </div>
 </section>
 
-<section class="max-w-7xl mx-auto px-6 py-24 grid md:grid-cols-3 gap-10">
-    <div class="bg-slate-900 border border-slate-800 p-10 rounded-3xl space-y-6">
+<section class="max-w-7xl mx-auto px-6 py-10 grid md:grid-cols-3 gap-6 md:gap-10">
+    <div class="bg-slate-900/80 backdrop-blur-sm border border-slate-800 p-8 rounded-3xl space-y-5">
         <i class="fa-solid fa-clock-rotate-left text-lime-400 text-3xl"></i>
-        <h3 class="text-2xl font-black uppercase">Operation Timeline</h3>
-        <ul class="space-y-4 text-slate-300">
+        <h3 class="text-xl md:text-2xl font-black uppercase">Operation Timeline</h3>
+        <ul class="space-y-3 text-slate-300 text-sm md:text-base">
             <li><span class="text-white font-bold">05:30</span> Pre-Walk Stretching</li>
             <li><span class="text-lime-400 font-bold">06:00</span> 10K Health Walk Flag-off</li>
             <li><span class="text-white font-bold">07:30</span> Post-Walk Aerobics Mania</li>
         </ul>
     </div>
-    <div class="bg-slate-900 border border-slate-800 p-10 rounded-3xl space-y-6">
+    <div class="bg-slate-900/80 backdrop-blur-sm border border-slate-800 p-8 rounded-3xl space-y-5">
         <i class="fa-solid fa-person-running text-lime-400 text-3xl"></i>
-        <h3 class="text-2xl font-black uppercase">Aerobics Mania</h3>
-        <p class="text-slate-300">A scenic 10K route followed by intense, expert-led Aerobics Mania Workout. Prepare for movement, motivation, and music.</p>
-        <p class="text-sm italic text-slate-500">Also featuring: Cash Bar & Braai</p>
+        <h3 class="text-xl md:text-2xl font-black uppercase">Aerobics Mania</h3>
+        <p class="text-slate-300 text-sm md:text-base">A scenic 10K route followed by intense, expert-led Aerobics Mania Workout. Prepare for movement, motivation, and music.</p>
+        <p class="text-xs italic text-slate-500">Also featuring: Cash Bar & Braai</p>
     </div>
-    <div class="bg-slate-900 border border-slate-800 p-10 rounded-3xl space-y-6">
+    <div class="bg-slate-900/80 backdrop-blur-sm border border-slate-800 p-8 rounded-3xl space-y-5">
         <i class="fa-solid fa-money-bill-wave text-lime-400 text-3xl"></i>
-        <h3 class="text-2xl font-black uppercase">Investment</h3>
-        <div class="space-y-2">
+        <h3 class="text-xl md:text-2xl font-black uppercase">Investment</h3>
+        <div class="space-y-2 text-sm md:text-base">
             <p class="text-slate-300">Single Operative: <span class="text-white font-bold">K200</span></p>
             <p class="text-slate-300">The Squad (6): <span class="text-white font-bold">K1,000</span></p>
             <p class="text-slate-300">Corporate Div (10): <span class="text-white font-bold">K10,000</span></p>
@@ -99,17 +84,7 @@
     </div>
 </section>
 
-<div class="flex items-center justify-center gap-3 py-6 group">
-    <div class="w-10 h-10 rounded-full bg-slate-900 border border-amber-400/20 flex items-center justify-center transition-all group-hover:border-amber-400 shadow-lg shadow-amber-400/5">
-        <i class="fa-solid fa-location-dot text-amber-400"></i>
-    </div>
-    <div class="text-left">
-        <p class="text-[10px] font-bold text-slate-500 uppercase tracking-[0.2em] mb-0.5">Deployment Point</p>
-        <p class="text-sm font-black text-white uppercase tracking-wider">St John Convent Grounds</p>
-    </div>
-</div>
-
-<section id="register" class="max-w-4xl mx-auto px-6 py-24 mt-8 relative mb-20">
+<section id="register" class="max-w-4xl mx-auto px-4 md:px-6 py-12 md:py-24 relative mb-10">
     <div class="enrollment-card shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
         <div class="form-header">
             <span class="deployment-clearance">DEPLOYMENT CLEARANCE</span>
@@ -127,7 +102,7 @@
                 </div>
                 <div class="input-group">
                     <label for="phone">CELL NUMBER</label>
-                    <input type="tel" id="phone" required placeholder="09XXXXXXXX">
+                    <input type="tel" id="phone" required placeholder="096XXXXXXX">
                 </div>
                 <div class="input-group">
                     <label for="address">PHYSICAL ADDRESS</label>
@@ -154,11 +129,12 @@
                     </label>
                 </div>
             </div>
+            
             <button type="button" class="btn-proceed" onclick="triggerManualPayment()">
                 PROCEED TO PAYMENT ➔
             </button>
 
-            <div class="text-center mt-5 mb-2">
+            <div class="text-center mt-6 mb-2">
                 <a href="https://wa.me/260966908648?text=Mission%20Control%2C%20I%20need%20clearance%20assistance." target="_blank" class="inline-flex items-center gap-2 text-slate-400 hover:text-[#25D366] transition-colors text-[10px] md:text-xs font-black uppercase tracking-[0.2em] bg-slate-900/50 px-4 md:px-5 py-2 md:py-3 rounded-full border border-slate-800 hover:border-[#25D366]/30 shadow-sm">
                     <i class="fa-brands fa-whatsapp text-lg text-[#25D366]"></i> Need Assistance?
                 </a>
@@ -171,7 +147,7 @@
     </div>
 </section>
 
-<footer class="bg-slate-950 py-10 border-t border-slate-900 mt-20">
+<footer class="bg-[#05080d] py-10 border-t border-slate-900">
     <div class="text-center space-y-4">
         <p class="text-slate-500 text-[9px] font-mono tracking-[0.4em] uppercase px-4">
             SYSTEMS ARCHITECTED BY // PURPLE WORTH STUDIOS
@@ -179,69 +155,65 @@
     </div>
 </footer>
 
-<div id="successModal" class="fixed inset-0 bg-slate-950/95 z-[60] hidden flex justify-center items-center px-4 backdrop-blur-sm transition-opacity">
-    <div class="bg-[#0b101a] border border-lime-400/30 rounded-3xl p-10 max-w-sm w-full relative shadow-[0_0_50px_rgba(164,227,32,0.15)] text-center transform transition-all scale-100">
+<div id="paymentModal" class="fixed inset-0 bg-slate-950/95 z-50 hidden flex justify-center items-center px-4 backdrop-blur-sm transition-opacity">
+    <div class="bg-[#0b101a] border border-slate-800 rounded-3xl p-5 md:p-8 max-w-md w-full relative shadow-[0_0_50px_rgba(0,0,0,0.8)] max-h-[90vh] overflow-y-auto">
+        <button onclick="closeModal()" class="absolute top-4 right-4 md:top-5 md:right-5 text-slate-500 hover:text-white transition-colors z-10">
+            <i class="fa-solid fa-xmark text-2xl"></i>
+        </button>
         
-        <div class="mb-6 flex justify-center">
-            <div class="w-20 h-20 bg-lime-400/10 rounded-full flex items-center justify-center border border-lime-400/20">
-                <i class="fa-solid fa-circle-check text-5xl text-lime-400 drop-shadow-[0_0_15px_rgba(164,227,32,0.6)]"></i>
-            </div>
+        <div class="text-center mb-5 mt-2">
+            <span class="text-amber-400 text-[10px] font-black tracking-[0.3em] uppercase">Official Gateway</span>
+            <h3 class="text-xl md:text-2xl font-black text-white mt-1 uppercase tracking-wide">USSD Transfer</h3>
         </div>
         
-        <h3 class="text-2xl font-black text-white uppercase tracking-wide mb-2">Transmission<br><span class="text-lime-400">Successful</span></h3>
-        <p class="text-slate-400 text-sm mb-8 font-medium leading-relaxed">
-            Your registration data has been logged securely. Clearance will be confirmed upon verification of funds.
-        </p>
+        <div class="space-y-3 md:space-y-4 bg-slate-900/50 p-4 md:p-5 rounded-2xl border border-slate-800">
+            <p class="text-slate-300 text-xs md:text-sm text-center font-medium">To secure your clearance, please pay <strong class="text-lime-400 text-base md:text-lg" id="modalAmount">K0</strong> via the cross-platform network:</p>
+            
+            <div class="bg-[#06090f] p-4 md:p-5 rounded-xl border border-slate-800 shadow-inner text-left space-y-3 md:space-y-4">
+                <div class="flex items-center gap-3 md:gap-4">
+                    <span class="w-6 h-6 shrink-0 rounded-full bg-slate-800 text-lime-400 flex items-center justify-center text-xs font-bold border border-lime-400/20">1</span>
+                    <p class="text-slate-300 text-xs md:text-sm">Dial <span class="text-white font-black tracking-widest bg-slate-800 px-2 py-1 rounded">*4466#</span></p>
+                </div>
+                <div class="flex items-center gap-3 md:gap-4">
+                    <span class="w-6 h-6 shrink-0 rounded-full bg-slate-800 text-lime-400 flex items-center justify-center text-xs font-bold border border-lime-400/20">2</span>
+                    <p class="text-slate-300 text-xs md:text-sm">Select <span class="text-white font-bold">Option 3</span>, then <span class="text-white font-bold">Option 1</span></p>
+                </div>
+                <div class="flex items-center gap-3 md:gap-4">
+                    <span class="w-6 h-6 shrink-0 rounded-full bg-slate-800 text-lime-400 flex items-center justify-center text-xs font-bold border border-lime-400/20">3</span>
+                    <p class="text-slate-300 text-xs md:text-sm">Merchant Code: <span class="text-white font-black tracking-widest text-base md:text-lg ml-1">510565</span></p>
+                </div>
+                <div class="flex items-center gap-3 md:gap-4">
+                    <span class="w-6 h-6 shrink-0 rounded-full bg-slate-800 text-lime-400 flex items-center justify-center text-xs font-bold border border-lime-400/20">4</span>
+                    <p class="text-slate-300 text-xs md:text-sm">Confirm: <span class="text-amber-400 font-bold uppercase text-[10px] md:text-xs">Sacred Heart Parish</span></p>
+                </div>
+            </div>
+            
+            <p class="text-[10px] md:text-xs text-slate-400 text-center uppercase tracking-wider mt-4">
+                Ensure you are paying from your registered number: <br>
+                <span id="modalRef" class="text-white font-bold text-xs md:text-sm mt-1 block">Phone Number</span>
+            </p>
+        </div>
         
-        <button onclick="closeSuccessModal()" class="w-full bg-slate-800 hover:bg-slate-700 text-white font-black py-4 rounded-xl uppercase tracking-widest transition-colors border border-slate-700 shadow-lg">
-            Acknowledge ➔
+        <button onclick="confirmManualRegistration()" class="w-full mt-5 md:mt-6 bg-white hover:bg-lime-400 text-slate-950 font-black py-3 md:py-4 rounded-xl text-sm md:text-base uppercase tracking-widest transition-colors shadow-lg">
+            I Have Sent The Funds ➔
         </button>
     </div>
 </div>
 
-<div id="paymentModal" class="fixed inset-0 bg-slate-950/95 z-50 hidden flex justify-center items-center px-4 backdrop-blur-sm transition-opacity">
-    <div class="bg-[#0b101a] border border-slate-800 rounded-3xl p-8 max-w-md w-full relative shadow-[0_0_50px_rgba(0,0,0,0.8)]">
-        <button onclick="closeModal()" class="absolute top-5 right-5 text-slate-500 hover:text-white transition-colors">
-            <i class="fa-solid fa-xmark text-2xl"></i>
-        </button>
-        
-            <div class="text-center mb-5 mt-2">
-            <span class="text-amber-400 text-[10px] font-black tracking-[0.3em] uppercase">Official Gateway</span>
-            <h3 class="text-2xl font-black text-white mt-2 uppercase tracking-wide">USSD Transfer</h3>
-        </div>
-        
-        <div class="space-y-4 bg-slate-900/50 p-5 rounded-2xl border border-slate-800">
-            <p class="text-slate-300 text-sm text-center font-medium">To secure your clearance, please pay <strong class="text-lime-400 text-lg" id="modalAmount">K0</strong> via the cross-platform network:</p>
-            
-                <div class="bg-[#06090f] p-4 md:p-5 rounded-xl border border-slate-800 shadow-inner text-left space-y-3 md:space-y-4">
-                <div class="flex items-center gap-4">
-                    <span class="w-6 h-6 shrink-0 rounded-full bg-slate-800 text-lime-400 flex items-center justify-center text-xs font-bold border border-lime-400/20">1</span>
-                    <p class="text-slate-300 text-sm">Dial <span class="text-white font-black tracking-widest bg-slate-800 px-2 py-1 rounded">*4466#</span></p>
-                </div>
-                <div class="flex items-center gap-4">
-                    <span class="w-6 h-6 shrink-0 rounded-full bg-slate-800 text-lime-400 flex items-center justify-center text-xs font-bold border border-lime-400/20">2</span>
-                    <p class="text-slate-300 text-sm">Select <span class="text-white font-bold">Option 3</span>, then <span class="text-white font-bold">Option 1</span></p>
-                </div>
-                <div class="flex items-center gap-4">
-                    <span class="w-6 h-6 shrink-0 rounded-full bg-slate-800 text-lime-400 flex items-center justify-center text-xs font-bold border border-lime-400/20">3</span>
-                    <p class="text-slate-300 text-sm">Merchant Code: <span class="text-white font-black tracking-widest text-lg ml-1">510565</span></p>
-                </div>
-                <div class="flex items-center gap-4">
-                    <span class="w-6 h-6 shrink-0 rounded-full bg-slate-800 text-lime-400 flex items-center justify-center text-xs font-bold border border-lime-400/20">4</span>
-                    <p class="text-slate-300 text-sm">Confirm: <span class="text-amber-400 font-bold uppercase">Sacred Heart Parish</span></p>
-                </div>
+<div id="successModal" class="fixed inset-0 bg-slate-950/95 z-[60] hidden flex justify-center items-center px-4 backdrop-blur-sm transition-opacity">
+    <div class="bg-[#0b101a] border border-lime-400/30 rounded-3xl p-8 md:p-10 max-w-sm w-full relative shadow-[0_0_50px_rgba(164,227,32,0.15)] text-center">
+        <div class="mb-6 flex justify-center">
+            <div class="w-16 h-16 md:w-20 md:h-20 bg-lime-400/10 rounded-full flex items-center justify-center border border-lime-400/20">
+                <i class="fa-solid fa-circle-check text-4xl md:text-5xl text-lime-400 drop-shadow-[0_0_15px_rgba(164,227,32,0.6)]"></i>
             </div>
-            
-            <p class="text-xs text-slate-400 text-center uppercase tracking-wider mt-4">
-                Ensure you are paying from your registered number: <br>
-                <span id="modalRef" class="text-white font-bold text-sm mt-1 block">Phone Number</span>
-            </p>
         </div>
-        
-        <button onclick="confirmManualRegistration()" class="w-full mt-6 bg-white hover:bg-lime-400 text-slate-950 font-black py-4 rounded-xl uppercase tracking-widest transition-colors shadow-lg">
-            I Have Sent The Funds ➔
+        <h3 class="text-xl md:text-2xl font-black text-white uppercase tracking-wide mb-2">Transmission<br><span class="text-lime-400">Successful</span></h3>
+        <p class="text-slate-400 text-xs md:text-sm mb-8 font-medium leading-relaxed">
+            Your registration data has been logged securely. Clearance will be confirmed upon verification of funds.
+        </p>
+        <button onclick="closeSuccessModal()" class="w-full bg-slate-800 hover:bg-slate-700 text-white font-black py-3 md:py-4 rounded-xl text-sm md:text-base uppercase tracking-widest transition-colors border border-slate-700 shadow-lg">
+            Acknowledge ➔
         </button>
-        
     </div>
 </div>
 
@@ -267,28 +239,21 @@
             return;
         }
 
-        // Inject data into Modal
         document.getElementById('modalAmount').innerText = 'K' + amount;
-        // 👇 UPDATE THIS LINE TO SHOW BOTH NAME AND PHONE 👇
         document.getElementById('modalRef').innerText = fullName + " (" + phone + ")";
-        
         document.getElementById('paymentModal').classList.remove('hidden');
     }
 
-
-    // 3. Close Modal Logic
+    // 3. Modal Close Functions
     function closeModal() {
         document.getElementById('paymentModal').classList.add('hidden');
     }
 
-    // --- NEW: Close the success modal ---
     function closeSuccessModal() {
         document.getElementById('successModal').classList.add('hidden');
     }
 
-    // --- UPDATE YOUR FINAL SUBMISSION LOGIC ---
-
-    // --- UPDATED FINAL SUBMISSION LOGIC ---
+    // 4. Final Data Submission to Google Sheets
     async function confirmManualRegistration() {
         const btn = document.querySelector('#paymentModal button:last-child');
         btn.innerText = "VERIFYING UPLINK...";
@@ -301,35 +266,31 @@
             amount: document.querySelector('input[name="division"]:checked').value
         };
 
-        const GOOGLE_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbx1th4kXW6k1QDkSwJVKNnLFiBfVq_hxvcJfdhFkr40kJo2ahaHrv6P01HDKKZBxGfc/exec"; // Keep your active URL here!
+        // ⚠️ ENSURE YOUR GOOGLE APPS SCRIPT URL IS CORRECT HERE ⚠️
+        const GOOGLE_WEB_APP_URL = "YOUR_GOOGLE_SCRIPT_URL_HERE";
 
         try {
-            const response = await fetch(GOOGLE_WEB_APP_URL, {
+            const response = await fetch(https://script.google.com/macros/s/AKfycbx1th4kXW6k1QDkSwJVKNnLFiBfVq_hxvcJfdhFkr40kJo2ahaHrv6P01HDKKZBxGfc/exec, {
                 method: 'POST',
                 redirect: 'follow', 
-                headers: {
-                    "Content-Type": "text/plain;charset=utf-8", 
-                },
+                headers: { "Content-Type": "text/plain;charset=utf-8" },
                 body: JSON.stringify(registrationData)
             });
             
             const result = await response.json();
             
             if(result.status === "success") {
-                // 1. Hide the payment modal
-                closeModal(); 
-                // 2. Show the new custom Success Modal
-                document.getElementById('successModal').classList.remove('hidden'); 
-                // 3. Reset the form
+                closeModal();
+                document.getElementById('successModal').classList.remove('hidden');
                 btn.innerText = "I Have Sent The Funds ➔";
                 document.getElementById('missionForm').reset();
             } else {
-                alert("Error logging registration: " + result.msg); // Keep basic alert for actual code errors
+                alert("Error logging registration: " + result.msg);
                 btn.innerText = "I Have Sent The Funds ➔";
             }
         } catch (e) {
             console.error("Connection failed", e);
-            // Fallback for strict CORS blocks locally
+            // Fallback Success (for strict local CORS blocks)
             closeModal();
             document.getElementById('successModal').classList.remove('hidden');
             btn.innerText = "I Have Sent The Funds ➔";
