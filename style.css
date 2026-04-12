@@ -2,11 +2,72 @@
 .enrollment-card {
     background-color: #0b101a;
     border-radius: 16px;
+    padding: 40px 30px;
+    max-width: 800px;
+    margin: 0 auto;
+    border: 1px solid #1f2b3e;
+}
+
+/* Venue Briefing Bar */
+.venue-brief {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 15px 0;
+    border-top: 1px solid #1f2b3e;
+    border-bottom: 1px solid #1f2b3e;
+    margin-bottom: 30px;
+    background: rgba(164, 227, 32, 0.02);
+}
+
+/* The Three Division Boxes */
+.division-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.div-card {
+    background-color: #06090f;
+    border: 2px solid #1f2b3e;
+    border-radius: 12px;
+    padding: 25px 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.div-card.active {
+    border-color: #a4e320;
+    background-color: rgba(164, 227, 32, 0.08);
+    box-shadow: 0 0 20px rgba(164, 227, 32, 0.1);
+}
+
+.div-tag { color: #5a6b82; font-size: 9px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 5px; }
+.div-title { color: white; font-weight: 800; font-size: 1.1rem; text-transform: uppercase; margin-bottom: 5px; }
+.div-price { color: #a4e320; font-size: 1rem; font-weight: 800; }
+
+/* Mobile Stack */
+@media screen and (max-width: 768px) {
+    .division-cards { grid-template-columns: 1fr; }
+    .venue-brief { flex-direction: column; gap: 10px; align-items: center; }
+    .enrollment-card { padding: 30px 20px; }
+}
+/* Sacred Heart Health Walk - Tactical-01 Enrollment Card Styles */
+.enrollment-card {
+    background-color: #0b101a;
+    border-radius: 16px;
     padding: 40px;
-    max-width: 700px;
+    max-width: 800px; /* Slightly wider to fit the 3 boxes better */
     margin: 0 auto;
     font-family: 'Montserrat', sans-serif;
+    border: 1px solid #1f2b3e;
 }
+
 .deployment-clearance {
     color: #8bc34a;
     font-size: 0.7rem;
@@ -14,160 +75,131 @@
     font-weight: 700;
     text-transform: uppercase;
 }
+
 .form-header h2 {
     color: white;
     font-size: 2.5rem;
     margin: 5px 0 30px 0;
     text-transform: uppercase;
 }
-.text-green {
-    color: #a4e320;
-}
+
+.text-green { color: #a4e320; }
+
 .input-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 30px;
     margin-bottom: 40px;
 }
+
 .input-group {
     display: flex;
     flex-direction: column;
     text-align: left;
 }
+
 .input-group label, .section-label {
     color: #5a6b82;
     font-size: 0.7rem;
     letter-spacing: 1.5px;
-    margin-bottom: 8px;
+    margin-bottom: 12px;
     text-transform: uppercase;
+    font-weight: 800;
 }
+
 .input-group input {
     background: transparent;
     border: none;
     border-bottom: 1px solid #1f2b3e;
     color: white;
     font-size: 1rem;
-    padding: 8px 0;
+    padding: 10px 0;
     outline: none;
-    transition: border-color 0.3s ease;
+    transition: all 0.3s ease;
 }
+
 .input-group input:focus {
     border-bottom: 1px solid #a4e320;
 }
-.division-section {
-    margin-bottom: 40px;
-    text-align: left;
-}
+
+/* --- THE PREMIUM BOXES --- */
 .division-cards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 15px;
-    margin-top: 15px;
 }
+
 .div-card {
     background-color: #06090f;
-    border: 1px solid #1f2b3e;
-    border-radius: 8px;
-    padding: 20px;
+    border: 2px solid #1f2b3e; /* Thicker border for better visibility */
+    border-radius: 12px;
+    padding: 25px 15px;
     text-align: center;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
-.div-card input[type="radio"] {
-    display: none;
+
+.div-card .div-tag {
+    display: block;
+    color: #5a6b82;
+    font-size: 10px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 4px;
 }
-.div-title {
+
+.div-card .div-title {
     display: block;
     color: white;
-    font-weight: 600;
-    font-size: 1rem;
+    font-weight: 800;
+    font-size: 1.1rem;
     margin-bottom: 5px;
+    text-transform: uppercase;
 }
-.div-price {
+
+.div-card .div-price {
     display: block;
     color: #a4e320;
-    font-size: 0.8rem;
-    font-weight: 700;
+    font-size: 1rem;
+    font-weight: 800;
 }
+
+/* Active State - This is what makes it glow */
 .div-card.active {
     border-color: #a4e320;
-    background-color: rgba(164, 227, 32, 0.05);
+    background-color: rgba(164, 227, 32, 0.08);
+    box-shadow: 0 0 20px rgba(164, 227, 32, 0.15);
+    transform: translateY(-3px);
 }
+
 .btn-proceed {
     width: 100%;
     background: linear-gradient(90deg, #bcf047, #98d115);
     color: #06090f;
     border: none;
-    padding: 18px;
+    padding: 20px;
     font-size: 1.1rem;
-    font-weight: 800;
+    font-weight: 900;
     letter-spacing: 2px;
-    border-radius: 8px;
+    border-radius: 12px;
     cursor: pointer;
-    box-shadow: 0 10px 30px rgba(164, 227, 32, 0.25);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    margin-top: 20px;
+    text-transform: uppercase;
+    box-shadow: 0 10px 30px rgba(164, 227, 32, 0.2);
+    transition: all 0.3s ease;
 }
+
 .btn-proceed:hover {
     transform: translateY(-2px);
     box-shadow: 0 15px 40px rgba(164, 227, 32, 0.4);
 }
-.merchant-footer {
-    text-align: center;
-    color: #a4e320;
-    font-size: 0.7rem;
-    font-weight: 700;
-    margin-top: 20px;
-    letter-spacing: 1px;
-}
 
-/* --- TACTICAL MOBILE RESPONSIVENESS OVERRIDE --- */
+/* --- MOBILE OVERRIDE --- */
 @media screen and (max-width: 768px) {
-    .enrollment-card {
-        padding: 30px 20px; /* Restored breathing room inside the card */
-        width: 100%; 
-        box-sizing: border-box;
-        border-radius: 16px; /* Restored the premium corner curve */
-    }
-    
-    .form-header h2 {
-        font-size: 2rem; /* Scaled back up for impact */
-        margin-bottom: 25px;
-    }
-    
-    .input-grid {
-        grid-template-columns: 1fr;
-        gap: 25px; /* Wider gap between text inputs */
-        margin-bottom: 30px;
-    }
-
-    /* Make the text inputs taller and easier to tap on phones */
-    .input-group input {
-        font-size: 1.1rem; 
-        padding: 12px 0; 
-    }
-    
-    .division-cards {
-        grid-template-columns: 1fr;
-        gap: 15px; /* Better spacing between the 3 tiers */
-    }
-    
-    /* Restore the chunky size of the tier selection boxes */
-    .div-card {
-        padding: 18px; 
-    }
-
-    .div-title {
-        font-size: 1.1rem; /* Larger tier names */
-    }
-
-    .div-price {
-        font-size: 1rem; /* Larger price text */
-    }
-    
-    /* Restore the massive call-to-action button */
-    .btn-proceed {
-        padding: 18px;
-        font-size: 1.05rem;
-        margin-top: 10px;
-    }
+    .enrollment-card { padding: 30px 20px; width: 95%; }
+    .input-grid { grid-template-columns: 1fr; gap: 20px; }
+    .division-cards { grid-template-columns: 1fr; }
+    .form-header h2 { font-size: 1.8rem; }
+    .div-card { padding: 20px; }
 }
