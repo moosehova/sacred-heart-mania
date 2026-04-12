@@ -123,35 +123,51 @@
 /* --- TACTICAL MOBILE RESPONSIVENESS OVERRIDE --- */
 @media screen and (max-width: 768px) {
     .enrollment-card {
-        padding: 30px 20px;
-        /* Forces the card to be slightly smaller than the screen, creating a margin */
-        width: calc(100% - 20px); 
+        padding: 30px 20px; /* Restored breathing room inside the card */
+        width: 100%; 
         box-sizing: border-box;
-        margin: 0 auto;
+        border-radius: 16px; /* Restored the premium corner curve */
     }
     
     .form-header h2 {
-        font-size: 1.8rem;
-        margin-bottom: 20px;
+        font-size: 2rem; /* Scaled back up for impact */
+        margin-bottom: 25px;
     }
     
     .input-grid {
         grid-template-columns: 1fr;
-        gap: 15px; /* Tighter gap between inputs */
-        margin-bottom: 25px;
+        gap: 25px; /* Wider gap between text inputs */
+        margin-bottom: 30px;
+    }
+
+    /* Make the text inputs taller and easier to tap on phones */
+    .input-group input {
+        font-size: 1.1rem; 
+        padding: 12px 0; 
     }
     
     .division-cards {
         grid-template-columns: 1fr;
-        gap: 10px;
+        gap: 15px; /* Better spacing between the 3 tiers */
     }
     
+    /* Restore the chunky size of the tier selection boxes */
     .div-card {
-        padding: 12px; /* Slimmer division cards */
+        padding: 18px; 
+    }
+
+    .div-title {
+        font-size: 1.1rem; /* Larger tier names */
+    }
+
+    .div-price {
+        font-size: 1rem; /* Larger price text */
     }
     
+    /* Restore the massive call-to-action button */
     .btn-proceed {
-        padding: 15px;
-        font-size: 0.95rem;
+        padding: 18px;
+        font-size: 1.05rem;
+        margin-top: 10px;
     }
 }
