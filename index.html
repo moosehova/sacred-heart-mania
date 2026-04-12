@@ -259,10 +259,18 @@ function closeSuccessModal() { document.getElementById('successModal').classList
 async function confirmManualRegistration() {
     const btn = document.querySelector('#paymentModal button:last-child');
     btn.innerText = "VERIFYING UPLINK...";
-    const GOOGLE_URL = "https://script.google.com/macros/s/AKfycbwkR1A5lZinYlmkC0GqgJCad_sXPDehIOReFLWH_7yvdKjoe-qfJBqhWhBtsHuHZ4W-/exec";
+    // 1. Capture the selected amount
+    const amountValue = document.querySelector('input[name="division"]:checked').value;
+    // 2. Translate the amount into a Plan Name
+    let planName = "";
+    if (amountValue === "200") { planName = "K200 - Single"; }
+    else if (amountValue === "1000") { planName = "K1,000 - Team of 6"; }
+    else if (amountValue === "10000") { planName = "K10,000 - Corporate"; }
+
+    const GOOGLE_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbwkR1A5lZinYlmkC0GqgJCad_sXPDehIOReFLWH_7yvdKjoe-qfJBqhWhBtsHuHZ4W-/exec";
 
     try {
-        await fetch(GOOGLE_URL, {
+        await fetch(GOOGLE_WEB_APP_URL, {
             method: 'POST',
             mode: 'no-cors',
             body: JSON.stringify({
@@ -270,12 +278,13 @@ async function confirmManualRegistration() {
                 phone: document.getElementById('phone').value,
                 email: document.getElementById('email').value,
                 address: document.getElementById('address').value,
-                amount: document.querySelector('input[name="division"]:checked').value
+                amount: planName // <--- This now sends the full Plan Name instead of just the number
             })
         });
         closeModal();
         document.getElementById('successModal').classList.remove('hidden');
         document.getElementById('missionForm').reset();
+        btn.innerText = "I Have Sent The Funds ➔";
     } catch (e) {
         closeModal();
         document.getElementById('successModal').classList.remove('hidden');
